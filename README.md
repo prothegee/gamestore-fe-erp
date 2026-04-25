@@ -1,6 +1,29 @@
 # GameStore ERP — Frontend
 
+<details close>
+<summary>TL;DR</summary>
+GameStore ERP — Frontend (Vue 3 + TypeScript + Vite)
+
+• Built a role-based internal ERP dashboard with Vue 3 (Composition API), covering 8 modules: products, orders, customers, suppliers, promotions, media, reports, and staff accounts — all backed by a mock-first localStorage layer with clear API integration points.
+
+• Implemented client-side RBAC via Vue Router guards: four roles (superadmin, manager, staff, viewer) with per-route access control and auth-aware navigation, designed to drop into a real session API with minimal changes.
+
+• Engineered shared application state with Pinia stores (8 stores) following a consistent load-seed-persist pattern, keeping the UI fully functional without a live backend while preserving a clean separation between mock and real data layers.
+
+• Established full frontend quality toolchain: ESLint 10 (flat config, typescript-eslint, eslint-plugin-vue) + Prettier 3, Vitest unit tests (65 tests across 6 files), and Playwright E2E — with lint and format scripts matching the wider project's conventions.
+
+• Deployed as a static SPA served by `serve` under PM2, proxied via HAProxy with SNI-based hostname routing and deny-by-default for unmatched hosts.
+
+• Tech Stack: Vue 3 (Composition API, script setup), TypeScript, Vite 5, Pinia, Vue Router 4, Vitest, Playwright, ESLint 10, Prettier 3, Bun runtime.
+
+• Outcome: Production-deployable ERP shell with complete UI coverage, RBAC, and a documented mock layer — ready for real API integration per module without architectural changes.
+</details>
+
 Internal ERP system for GameStore. Built with Vue 3, TypeScript, and Vite. Manages products, orders, customers, suppliers, promotions, media assets, reports, and staff accounts.
+
+For live demo, visit: https://dm-gmerp.prothegee.dev/
+
+<br>
 
 ## Tech Stack
 
