@@ -1,0 +1,145 @@
+:root {
+    --color-primary: #026c96;
+    --color-secondary: #288da9;
+    --color-accent: #7bc3af;
+    --color-warm: #ffe3ad;
+    --color-warning: #fda46f;
+    --color-danger: #db8068;
+
+    --color-bg: #f0f4f8;
+    --color-surface: #ffffff;
+    --color-surface-2: #f7fafc;
+    --color-border: #d9e3ec;
+    --color-border-light: #edf2f7;
+
+    --color-text-primary: #1a2b3c;
+    --color-text-secondary: #5a7184;
+    --color-text-muted: #8fa5ba;
+    --color-text-inverse: #ffffff;
+
+    --color-success: #38a169;
+    --color-success-bg: #f0fff4;
+    --color-error-bg: #fff5f5;
+    --color-warning-bg: #fffaf0;
+    --color-info-bg: #ebf8ff;
+
+    --sidebar-width: 240px;
+    --sidebar-collapsed-width: 60px;
+    --header-height: 56px;
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-lg: 12px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --transition: 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+    font-size: 14px;
+    color: var(--color-text-primary);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+#app {
+    height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Utility classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.flex {
+    display: flex;
+}
+.flex-col {
+    flex-direction: column;
+}
+.items-center {
+    align-items: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.gap-2 {
+    gap: 8px;
+}
+.gap-3 {
+    gap: 12px;
+}
+.gap-4 {
+    gap: 16px;
+}
+.w-full {
+    width: 100%;
+}
+.text-sm {
+    font-size: 12px;
+}
+.text-muted {
+    color: var(--color-text-muted);
+}
+.font-medium {
+    font-weight: 500;
+}
+.font-semibold {
+    font-weight: 600;
+}
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}

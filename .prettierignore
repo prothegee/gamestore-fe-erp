@@ -1,0 +1,6 @@
+node_modules
+dist
+package-lock.json
+bun.lock
+# Prettier Vue parser bug: <slot> with children inside <td> triggers implied-end-tag parse error
+src/components/ui/DataTable.vue
