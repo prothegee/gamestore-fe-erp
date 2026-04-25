@@ -35,16 +35,12 @@
                 <template #cell-status="{ row }">
                     <StatusBadge :status="(row as StaffUser).active ? 'active' : 'suspended'" />
                 </template>
-                <template #actions="{ row }">
+                <template #actions>
                     <div class="row-actions">
-                        <button class="action-btn" title="Edit">
+                        <button class="action-btn" title="Edit" disabled>
                             <AppIcon name="edit" :size="15" />
                         </button>
-                        <button
-                            class="action-btn action-btn--danger"
-                            title="Deactivate"
-                            @click="deactivate(row as StaffUser)"
-                        >
+                        <button class="action-btn action-btn--danger" title="Deactivate" disabled>
                             <AppIcon name="trash" :size="15" />
                         </button>
                     </div>
@@ -60,10 +56,7 @@ import PageHeader from "@/components/ui/PageHeader.vue";
 import DataTable from "@/components/ui/DataTable.vue";
 import StatusBadge from "@/components/ui/StatusBadge.vue";
 import AppIcon from "@/components/ui/AppIcon.vue";
-import { useToastStore } from "@/stores/toast";
 import type { RbacRole } from "@/types/common";
-
-const toast = useToastStore();
 
 interface StaffUser {
     id: string;
@@ -124,10 +117,7 @@ const columns = [
     { key: "createdAt", label: "Created" }
 ];
 
-function deactivate(u: StaffUser) {
-    u.active = false;
-    toast.add({ type: "success", message: `User "${u.username}" has been deactivated.` });
-}
+
 </script>
 
 <style scoped>
@@ -213,13 +203,17 @@ function deactivate(u: StaffUser) {
     align-items: center;
     transition: all var(--transition);
 }
-.action-btn:hover {
+.action-btn:hover:not(:disabled) {
     border-color: var(--color-secondary);
     color: var(--color-secondary);
 }
-.action-btn--danger:hover {
+.action-btn--danger:hover:not(:disabled) {
     border-color: var(--color-danger);
     color: var(--color-danger);
+}
+.action-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
 }
 .btn {
     display: inline-flex;
