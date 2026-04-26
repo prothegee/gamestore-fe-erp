@@ -7,6 +7,7 @@
         "dev": "vite",
         "build": "vue-tsc && vite build",
         "start": "node --env-file=.env node_modules/serve/build/main.js -s dist",
+        "serve": "serve -s dist -l 9006 --no-clipboard",
         "preview": "vite preview",
         "test": "vitest",
         "test:e2e": "playwright test",
