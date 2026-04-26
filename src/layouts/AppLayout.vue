@@ -120,7 +120,7 @@ const navItems = computed(() => {
 /* Sidebar */
 .sidebar {
     width: var(--sb-width);
-    background: var(--color-primary);
+    background: linear-gradient(180deg, #026c96 0%, #024e71 100%);
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -146,7 +146,7 @@ const navItems = computed(() => {
     width: 28px;
     height: 28px;
     border-radius: 6px;
-    background: var(--color-warm);
+    background: linear-gradient(135deg, var(--color-warm) 0%, #ffcb6b 100%);
     color: var(--color-primary);
     font-weight: 800;
     font-size: 11px;
@@ -189,6 +189,7 @@ const navItems = computed(() => {
 }
 .sidebar__toggle:hover {
     background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .sidebar__nav {
@@ -212,19 +213,22 @@ const navItems = computed(() => {
     font-weight: 500;
     transition:
         background var(--transition),
-        color var(--transition);
+        color var(--transition),
+        box-shadow var(--transition);
     white-space: nowrap;
     overflow: hidden;
     position: relative;
 }
 .sidebar__link:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
     color: #fff;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
 }
 .sidebar__link--active {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.07) 100%);
     color: #fff;
     font-weight: 600;
+    box-shadow: inset 3px 0 0 rgba(255, 255, 255, 0.65);
 }
 .sidebar__link-icon {
     flex-shrink: 0;
@@ -265,7 +269,7 @@ const navItems = computed(() => {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--color-secondary);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #1a7a8f 100%);
     color: #fff;
     font-weight: 700;
     font-size: 13px;
@@ -318,6 +322,7 @@ const navItems = computed(() => {
 .sidebar__logout:hover {
     color: #fff;
     background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 .app-layout--collapsed .sidebar__logout {
     margin: 0 auto;
@@ -366,12 +371,15 @@ const navItems = computed(() => {
     color: var(--color-text-secondary);
     display: flex;
     align-items: center;
-    padding: 4px;
-    border-radius: 4px;
-    transition: color var(--transition);
+    padding: 6px;
+    border-radius: 6px;
+    transition:
+        color var(--transition),
+        box-shadow var(--transition);
 }
 .topbar__notif-btn:hover {
     color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
 }
 .topbar__role-badge {
     font-size: 11px;
