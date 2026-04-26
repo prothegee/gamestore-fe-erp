@@ -21,7 +21,7 @@ GameStore ERP — Frontend (Vue 3 + TypeScript + Vite)
 
 Internal ERP system for GameStore. Built with Vue 3, TypeScript, and Vite. Manages products, orders, customers, suppliers, promotions, media assets, reports, and staff accounts.
 
-For live demo, visit: https://dm-gmerp.prothegee.dev/
+For live demo, visit: https://dm-gmerp.prothegee.dev/dashboard
 
 <br>
 

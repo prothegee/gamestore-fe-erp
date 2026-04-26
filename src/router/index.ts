@@ -14,8 +14,9 @@ const router = createRouter({
             path: "/",
             component: () => import("@/layouts/AppLayout.vue"),
             children: [
+                { path: "", redirect: "/dashboard" },
                 {
-                    path: "",
+                    path: "dashboard",
                     name: "dashboard",
                     component: () => import("@/views/DashboardView.vue")
                 },
@@ -82,7 +83,7 @@ const router = createRouter({
                 }
             ]
         },
-        { path: "/:pathMatch(.*)*", redirect: "/" }
+        { path: "/:pathMatch(.*)*", redirect: "/dashboard" }
     ]
 });
 
@@ -91,10 +92,10 @@ router.beforeEach((to) => {
     auth.restore();
 
     if (!to.meta.public && !auth.isAuthenticated) return "/login";
-    if (to.name === "login" && auth.isAuthenticated) return "/";
+    if (to.name === "login" && auth.isAuthenticated) return "/dashboard";
 
     const roles = to.meta.roles as string[] | undefined;
-    if (roles && auth.user && !roles.includes(auth.user.role)) return "/";
+    if (roles && auth.user && !roles.includes(auth.user.role)) return "/dashboard";
 
     return true;
 });
