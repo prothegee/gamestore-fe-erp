@@ -156,7 +156,7 @@ function sort(field: string) {
   color: var(--color-text-primary);
 }
 .dt__row { transition: background var(--transition); }
-.dt__row:hover { background: var(--color-surface-2); }
+.dt__row:hover { background: linear-gradient(90deg, rgba(40, 141, 169, 0.06) 0%, transparent 80%); }
 .dt__row--selected { background: rgba(40, 141, 169, 0.06); }
 .dt__empty { padding: 40px; text-align: center; color: var(--color-text-muted); }
 .dt__skeleton-rows { display: flex; flex-direction: column; gap: 2px; }
@@ -177,9 +177,18 @@ function sort(field: string) {
   padding: 4px 10px;
   font-size: 13px;
   cursor: pointer;
-  transition: background var(--transition);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    color var(--transition);
 }
-.dt-pagination__btn:hover:not(:disabled) { background: var(--color-border-light); }
+.dt-pagination__btn:hover:not(:disabled) {
+  background: var(--color-surface);
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 2px rgba(40, 141, 169, 0.18);
+  color: var(--color-secondary);
+}
 .dt-pagination__btn:disabled { opacity: 0.4; cursor: not-allowed; }
 .dt-pagination__page { font-weight: 600; }
 </style>
